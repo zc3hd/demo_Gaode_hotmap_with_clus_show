@@ -1,0 +1,247 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>详情页</title>
+<style>
+
+body {
+font-family: Tahoma;
+font-size: 10pt;
+/*line-height: 170%;*/
+padding-top: 10px;
+margin:0px;
+}
+/*------------------------------------------------------------侧边导航*/
+nav {
+background: gray;
+color: white;
+text-decoration: none;
+overflow-x: hidden;
+overflow-y: auto;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+width: 200px;
+}
+nav a {
+	text-decoration: none;
+	color: white;
+}
+/*-------------------------------------------------------------标头*/
+@keyframes move {
+	0% {
+		text-shadow: 5px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+	25% {
+		text-shadow: 20px 0px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateY(40deg);
+	}
+	50% {
+		text-shadow: 5px 0px 5px rgba(0,0,0,.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+	75% {
+		text-shadow: -20px 0px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateY(-40deg);
+	}
+	100% {
+		text-shadow: 5px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+}
+
+@keyframes moveX {
+	0% {
+		text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+	25% {
+		text-shadow: 0px 10px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateX(30deg);
+	}
+	50% {
+		text-shadow: 0px 0px 5px rgba(0,0,0,.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+	75% {
+		text-shadow: 0px 10px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateX(-30deg);
+	}
+	100% {
+		text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+}
+
+
+header {
+padding-top: 10px;
+padding-left: 220px;
+font-size: 18px;
+position: absolute;
+/*margin-bottom:30px;*/
+text-shadow: 5px 0px 3px rgba(0,0,0,.3);
+color: black;
+}
+
+header h1 {
+	
+	margin:0px;
+	padding: 0px;
+	animation: move 6s forwards infinite;
+}
+/*----------------------------------------------------------主题*/
+article {
+margin-top: 80px;
+padding-left: 220px;
+}
+
+@keyframes imgMoveOver {
+	0% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		transform: scale(1) ;
+	}
+	100% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		/*transform: perspective(2000px) rotateY(30deg);*/
+		transform: scale(1.01) translateY(-2%);
+	}
+}
+
+@keyframes imgMoveOut {
+	0% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		
+		transform: scale(1.1) translateY(-5%);
+	}
+	100% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		/*transform: perspective(2000px) rotateY(30deg);*/
+		transform: scale(1) ;
+	}
+}
+
+img {
+	/*position: relative;*/
+	width: 900px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: Orange;
+	transform-origin:left top;
+}
+img:hover {
+	animation: imgMoveOver 0.5s forwards;
+}
+/*段落*/
+h3,h4{
+	/*background-color: rgba(0,0,0,.3);*/
+	background-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0.2) 75%, white 100%);
+/*	width: 500px;*/
+	color: white;
+	font-size: 22px;
+	padding-left: 10px;
+}
+h4{
+	width: 50%;
+	font-size: 18px;
+	margin-left: 5px;
+}
+pre {
+	background-color: black;
+}
+pre code {
+	color: yellow;
+	font-size: 16px;
+	font-weight: 500;
+}
+/*---------------------------------------------------------底部*/
+footer {
+padding-top: 10px;
+padding-left: 220px;
+padding-bottom: 10px;
+background-color: black;
+color: white;
+}
+footer h3 {
+	color: white;
+	background-color:transparent;
+	background-image: linear-gradient(to right, black 0%,  black 100%);
+}
+</style>
+</head>
+<body>
+
+<nav>
+<ul>
+<li class="level3"><a href="#0.1">1.运行</a></li><li class="level3"><a href="#0.2">2.说明</a></li><li class="level3"><a href="#0.3">开源协议</a></li></ul>
+
+</nav>
+
+<header>
+<h1 id="-">【三】高德地图  热力图加聚合数据</h1>
+
+</header>
+
+<article>
+<h3 id="0.1">1.运行</h3>
+<pre><code>* $ git clone 地址
+* npm install 
+* $ gulp;
+</code></pre><h3 id="0.2">2.说明</h3>
+<ul>
+<li>官方提供的热力图没有显示数据</li>
+</ul>
+<p><img src="./webapp/readme_img/001.jpg" alt=""></p>
+<ul>
+<li>api也没有提供事件</li>
+</ul>
+<p><img src="./webapp/readme_img/002.jpg" alt=""></p>
+<ul>
+<li><p>热力图结合聚合数据进行热力数据显示，因为热力图其实也是一种聚合，唯一需要确认的是就是热力图的计算方式和聚合模式的的计算方式一样即可。</p>
+</li>
+<li><p>这个demo是模拟的数据随机。有些点没有包括聚合内部，在热力图可以显示为散点。按道理聚合点也应该显示散点，我这里影藏。</p>
+</li>
+</ul>
+
+</article>
+<footer>
+<h3 id="0.3">开源协议</h3>
+<p>本程序基于MIT协议开源。</p>
+<pre><code>Copyright (c) cc.
+</code></pre>
+</footer>
+</body>
+
+<script>
+	var div = document.createElement("div"); 
+	var body = document.getElementsByTagName('body')[0];
+	console.log(body);
+div.id = 'back_index';	
+div.style.width = '200px';
+div.style.height = '200px';
+div.style.backgroundImage = "url(./back_index.png)";
+div.style.backgroundSize = 'cover';
+div.style.position = 'fixed';
+div.style.left = '0px';
+div.style.bottom = '20px';
+body.appendChild(div);
+document.write(div);
+div.onmouseover = function () {
+	/* body... */
+	div.style.animation = 'imgMoveOver 0.5s forwards';
+};
+div.onmouseout = function () {
+	/* body... */
+	div.style.animation = 'imgMoveOut 0.5s forwards';
+};
+div.onclick = function () {
+	/* body... */
+	window.location.href = "https://zc3hd.github.io/";
+};
+
+</script>
+
+</html>
